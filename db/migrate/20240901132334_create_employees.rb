@@ -3,8 +3,8 @@ class CreateEmployees < ActiveRecord::Migration[7.2]
     create_table :employees do |t|
       t.string :name
       t.string :email
-      t.date :hire-date
-      t.string :employment-number
+      t.date :hire_date
+      t.string :employment_number
       t.references :branch, null: false, foreign_key: true
 
       t.timestamps
