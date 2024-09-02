@@ -43,7 +43,7 @@ amman_meeting_room_2 = amman.branch.rooms.create!(name: "Amman Meeting Room 2")
 
 #Room Placement
 employee_1_amman.rooms << amman_meeting_room_1
-employee_2_amman.rooms << (amman_meeting_room_1, amman_meeting_room_2)
+employee_2_amman.rooms << [amman_meeting_room_1, amman_meeting_room_2]
 
 
 
