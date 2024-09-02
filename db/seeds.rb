@@ -27,7 +27,7 @@ employee_2_dubai = dubai_branch.employees.create!(name: "Qusai Andrawes", email:
 employee_3_dubai = dubai_branch.employees.create!(name: "Saif Ammari", email: "nassar+6@zenhr.com", hire_date: "2022-01-01", employment_number: "6")
 
 #Terminate employee: Employee Terminated Amman as of: 31-Dec-2024
-Termination.create!(date: "2024-12-31" , employee: employee_terminated_amman)
+Termination.create!(termination_date: "2024-12-31" , employee: employee_terminated_amman)
 
 #Creating employee_1 with 2 financial packages
 employee_1_amman.financial_packages.create!(from_date "2023-01-01", to_date: "2023-12-31", amount: 500)

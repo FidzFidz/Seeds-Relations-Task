@@ -1,4 +1,4 @@
 class Termination < ApplicationRecord
-    validates :date, presence: true
+    validates :termination_date, presence: true
     belongs_to :employee
 end
