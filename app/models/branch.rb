@@ -4,3 +4,4 @@ class Branch < ApplicationRecord
   has_many :employees, dependent :destroy
   has_one :attendance_setup, dependent: destroy
 end
+
