@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_02_093224) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_02_112904) do
   create_table "attendance_setups", force: :cascade do |t|
     t.boolean "roaster"
     t.integer "branch_id", null: false
@@ -32,6 +32,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_093224) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "employee_rooms", force: :cascade do |t|
+    t.integer "employee_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_employee_rooms_on_employee_id"
+    t.index ["room_id"], name: "index_employee_rooms_on_room_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -71,6 +80,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_093224) do
 
   add_foreign_key "attendance_setups", "branches"
   add_foreign_key "branches", "companies"
+  add_foreign_key "employee_rooms", "employees"
+  add_foreign_key "employee_rooms", "rooms"
   add_foreign_key "employees", "branches"
   add_foreign_key "financial_packages", "employees"
   add_foreign_key "rooms", "branches"
