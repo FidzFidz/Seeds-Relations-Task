@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_01_132334) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_02_075307) do
   create_table "attendance_setups", force: :cascade do |t|
     t.boolean "roaster"
     t.integer "branch_id", null: false
