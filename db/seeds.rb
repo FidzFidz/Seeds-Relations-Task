@@ -17,33 +17,33 @@ amman_branch = zenhr.branches.create!(name: "Amman Branch")
 dubai_branch = zenhr.branches.create!(name: "Dubai Branch")
 
 #Creating 3 employees for Amman Branch
-employee_1_amman = amman_branch.employees.create!(name: "Fadi Nasser", email: "nassar+1@zenhr.com", hire_date: "2022-01-01", employment_number: "1")
-employee_2_amman = amman_branch.employees.create!(name: "Malik Nimri", email: "nassar+2@zenhr.com", hire_date: "2022-01-01", employment_number: "2")
-employee_terminated_amman = amman_branch.employees.create!(name: "Ramzi Haddad", email: "nassar+3@zenhr.com", hire_date: "2022-01-01", employment_number: "3")
+employee_1_amman = amman_branch.employees.create!(name: "Fadi Nasser", email: "nassar+18844@zenhr.com", hire_date: "2022-01-01", employment_number: "10")
+employee_2_amman = amman_branch.employees.create!(name: "Malik Nimri", email: "nassar+200022@zenhr.com", hire_date: "2022-01-01", employment_number: "22")
+employee_terminated_amman = amman_branch.employees.create!(name: "Ramzi Haddad", email: "nassar+4314314@zenhr.com", hire_date: "2022-01-01", employment_number: "333")
 
 #Creating 3 employees for Dubai Branch
-employee_1_dubai = dubai_branch.employees.create!(name: "Hunny Sabbagh", email: "nassar+4@zenhr.com", hire_date: "2022-01-01", employment_number: "4")
-employee_2_dubai = dubai_branch.employees.create!(name: "Qusai Andrawes", email: "nassar+5@zenhr.com", hire_date: "2022-01-01", employment_number: "5")
-employee_3_dubai = dubai_branch.employees.create!(name: "Saif Ammari", email: "nassar+6@zenhr.com", hire_date: "2022-01-01", employment_number: "6")
+employee_1_dubai = dubai_branch.employees.create!(name: "Hunny Sabbagh", email: "nassar+443122@zenhr.com", hire_date: "2022-01-01", employment_number: "4334")
+employee_2_dubai = dubai_branch.employees.create!(name: "Qusai Andrawes", email: "nassar+522222@zenhr.com", hire_date: "2022-01-01", employment_number: "5554")
+employee_3_dubai = dubai_branch.employees.create!(name: "Saif Ammari", email: "nassar+633333@zenhr.com", hire_date: "2022-01-01", employment_number: "6677")
 
 #Terminate employee: Employee Terminated Amman as of: 31-Dec-2024
-Termination.create!(termination_date: "2024-12-31" , employee: employee_terminated_amman)
+Termination.create!(employee: employee_terminated_amman, termination_date:"2024-12-31")
 
 #Creating employee_1 with 2 financial packages
-employee_1_amman.financial_packages.create!(from_date "2023-01-01", to_date: "2023-12-31", amount: 500)
-employee_1_amman.financial_packages.create!(from_date "2024-01-01", to_date: "2024-12-31" , amount: 600)
+employee_1_amman.financial_packages.create!(from_date: "2023-01-01", to_date: "2023-12-31", amount: 500)
+employee_1_amman.financial_packages.create!(from_date: "2024-01-01", to_date: "2024-12-31" , amount: 600)
 
 #Creating an employee_2 with 2 financial packages
-employee_2_amman.financial_packages.create!(from_date "2023-01-01", to_date: "2023-12-31", amount: 500)
-employee_2_amman.financial_packages.create!(from_date "2024-01-01", to_date: "2024-12-31", amount:600)
+employee_2_amman.financial_packages.create!(from_date: "2023-01-01", to_date: "2023-12-31", amount: 500)
+employee_2_amman.financial_packages.create!(from_date: "2024-01-01", to_date: "2024-12-31", amount:600)
 
 #Creating two rooms for amman branch
-amman_meeting_room_1 = amman.branch.rooms.create!(name: "Amman Meeting Room 1")
-amman_meeting_room_2 = amman.branch.rooms.create!(name: "Amman Meeting Room 2")
+amman_meeting_room_1 = amman_branch.rooms.create!(name: "Amman Meeting Room 1")
+amman_meeting_room_2 = amman_branch.rooms.create!(name: "Amman Meeting Room 2")
 
 #Room Placement
-employee_1_amman.rooms << amman_meeting_room_1
-employee_2_amman.rooms << [amman_meeting_room_1, amman_meeting_room_2]
+ employee_1_amman.rooms << amman_meeting_room_1
+ employee_2_amman.rooms << [amman_meeting_room_1, amman_meeting_room_2]
 
 
 

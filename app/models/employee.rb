@@ -5,4 +5,5 @@ class Employee < ApplicationRecord
   has_many :financial_packages
   has_one :termination, dependent: :destroy
   has_and_belongs_to_many :rooms 
+ 
 end

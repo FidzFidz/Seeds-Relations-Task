@@ -34,15 +34,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_112904) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employee_rooms", force: :cascade do |t|
-    t.integer "employee_id", null: false
-    t.integer "room_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_employee_rooms_on_employee_id"
-    t.index ["room_id"], name: "index_employee_rooms_on_room_id"
-  end
-
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -52,6 +43,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_112904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["branch_id"], name: "index_employees_on_branch_id"
+  end
+
+  create_table "employees_rooms", force: :cascade do |t|
+    t.integer "employee_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_employees_rooms_on_employee_id"
+    t.index ["room_id"], name: "index_employees_rooms_on_room_id"
   end
 
   create_table "financial_packages", force: :cascade do |t|
@@ -74,15 +74,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_02_112904) do
 
   create_table "terminations", force: :cascade do |t|
     t.date "termination_date"
+    t.integer "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "attendance_setups", "branches"
   add_foreign_key "branches", "companies"
-  add_foreign_key "employee_rooms", "employees"
-  add_foreign_key "employee_rooms", "rooms"
   add_foreign_key "employees", "branches"
+  add_foreign_key "employees_rooms", "employees"
+  add_foreign_key "employees_rooms", "rooms"
   add_foreign_key "financial_packages", "employees"
   add_foreign_key "rooms", "branches"
 end
